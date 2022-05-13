@@ -1,0 +1,2 @@
+module GeographicIconsHelper
+end

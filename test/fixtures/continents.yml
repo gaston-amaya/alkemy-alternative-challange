@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: continents
+#
+#  id           :integer          not null, primary key
+#  denomination :string
+#  picture      :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+one:
+  picture: MyString
+  denomination: MyString
+
+two:
+  picture: MyString
+  denomination: MyString
