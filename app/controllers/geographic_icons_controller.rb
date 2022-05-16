@@ -5,6 +5,8 @@ class GeographicIconsController < ApplicationController
     end
     
     def show 
+        @geographic_icons = GeographicIcon.find(params[:id])
+        render json: @geographic_icons, serializer: IconDetailSerializer
         
     end
 

@@ -4,7 +4,9 @@ class CitiesController < ApplicationController
         render json: @cities
     end
     
-    def show 
+    def show
+        @city = City.find(params[:id])
+        render json: @city, serializer: CityDetailSerializer
         
     end
 

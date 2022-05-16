@@ -4,7 +4,9 @@ class ContinentsController < ApplicationController
        render json: @continents 
     end
     
-    def show 
+    def show
+        @continent = Continent.find(params[:id])
+        render json: @continent, serializer: ContinentDetailSerializer
         
     end
 
