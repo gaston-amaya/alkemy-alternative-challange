@@ -1,4 +1,8 @@
 class ContinentsController < ApplicationController
+    #disables csrf authentication
+    protect_from_forgery with: :null_session
+
+
     def index 
        @continents = Continent.all
        render json: @continents 
@@ -7,26 +11,43 @@ class ContinentsController < ApplicationController
     def show
         @continent = Continent.find(params[:id])
         render json: @continent, serializer: ContinentDetailSerializer
-        
     end
 
-    def new 
+    def new
+        @continent = Continent.new
 
     end
 
     def create
+        continent = Continent.create(continent_params)
+
+        redirect_to continents_path
 
     end
 
     def edit
-
+        @continent = Continent.find(params[:id])
     end
 
-    def updated
+    def update
+    
+        @continent = Continent.find(params[:id])
 
+        @continent.update(continent_params)
+    
     end
 
     def destroy
-
+        
+        @continent = Continent.find(params[:id])
+        @continent.destroy
+    
     end
+
+    private  
+
+    def continent_params
+        params.require(:continent).permit(:picture, :denomination)
+    end
+
 end
