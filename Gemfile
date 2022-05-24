@@ -45,7 +45,9 @@ gem "bootsnap", require: false
 #active mode serializers
 gem 'active_model_serializers', '~> 0.10.0'
 
-#annotate for easy reading of column structure
+# Authentication
+gem 'devise' 
+gem 'devise-jwt'
 
 
 # Use Sass to process CSS
@@ -63,6 +65,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+#annotate for easy reading of our database structure
   gem "annotate"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
